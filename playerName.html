@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Player Name</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Enter Your Name</h1>
+    <div id="playerForm">
+        <input type="text" id="playerNameInput" placeholder="Enter your name" required>
+        <button id="startGameButton">Start Game</button>
+    </div>
+
+    <script>
+        document.getElementById('startGameButton').addEventListener('click', function() {
+            const playerName = document.getElementById('playerNameInput').value.trim();
+            if (playerName) {
+                // Save player name to local storage
+                localStorage.setItem('playerName', playerName);
+                // Redirect to the game page
+                window.location.href = 'index.html'; // Ensure this path is correct
+            } else {
+                alert('Please enter a valid name.');
+            }
+        });
+    </script>
+</body>
+</html>
